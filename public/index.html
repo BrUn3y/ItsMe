@@ -5,7 +5,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<meta property="og:title" content="Edgar Bruney Castañeda Torres"/>
-  	<meta property="og:image" content="http://pixell.com.mx/wp-content/uploads/2016/06/Nintkbendo-Mario-Bros.png"/>
+  	<meta property="og:image" content="background_7.jpg"/>
   	<meta name="description" content="Full Stack Developer - System Computer Engineer - Freelancer"/>
 		<link rel="stylesheet" href="style.css"/>
 		<link rel="icon" type="image/png" href="gem-coin.png"/>
@@ -15,6 +15,7 @@
 		<div id="wrapper">
 			<div id="bg"></div>
 			<div id="main">
+
 
 					<header id="header">
 						<h1>Edgar Bruney</h1>
@@ -32,11 +33,44 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<span>Mail: <a href="mailto:Brun3y@Gmail.com">Brun3y@gmail.com</a>.</span>
+						<span>Mail: <a href="mailto:Brun3y@Gmail.com">Brun3y@gmail.com</a></span>
 					</footer>
 
 			</div>
 		</div>
+
+		<script>
+
+		 var random = Math.floor((Math.random() * 7) + 1);
+		 switch (random) {
+		 	case 1:
+				var td1 = document.createElement('td');
+				document.getElementById('bg').className += 'background_one';
+		 		break;
+			case 2:
+				document.getElementById('bg').className += 'background_two';
+				break;
+			case 3:
+				document.getElementById('bg').className += 'background_three';
+				break;
+			case 4:
+				document.getElementById('bg').className += 'background_four';
+				break;
+			case 5:
+				document.getElementById('bg').className += 'background_five';
+				break;
+			case 6:
+				document.getElementById('bg').className += 'background_six';
+				break;
+			case 7:
+				document.getElementById('bg').className += 'background_seven';
+				break;
+	 		default:
+
+		 }
+
+
+		</script>
 		<!-- Global Site Tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107689682-1"></script>
 		<script>
@@ -54,3 +88,32 @@
 
 	</body>
 </html>
+
+<script>
+
+				jQuery.ajax({
+						type: "post",
+						url: "/eventoMx/?class=reservacion&method=status",
+						data: {
+								reservacion: <?php echo $_GET[no]; ?>
+						},
+						success: function (signal) {
+								console.log("------------------------");
+								var totalReservation = JSON.parse(signal);
+								console.log(totalReservation);
+								totalReservation= totalReservation.results.conf.length;
+								console.log(totalReservation);
+
+								if(totalReservation== 10){
+										//SHOW MAPA
+								}
+								else{
+										//HIDE MAPA
+								}
+
+						}
+				}
+				);
+
+
+</script>
